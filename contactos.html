@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Metadados -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="The Holy Sign — pop/rock alternativo. Site oficial.">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Scripts -->
+    <script src="/assets/scripts/config.js" defer></script>
+    <script src="/assets/scripts/main.js" defer></script>
+
+    <!-- Favicon, OGImage, Title -->
+    <meta property="og:image" content="/assets/images/ogimg.webp">
+    <link rel="icon" href="/favicon.png">
+    <title>Contactos | The Holy Sign</title>
+</head>
+
+<body>
+    <div id="site-header"></div>
+    <div class="page-head">
+        <div class="container">
+            <h1 class="sec-title">Contactos</h1>
+            <p class="sub">Concertos, imprensa e parcerias.</p>
+        </div>
+    </div>
+    <section style="padding-top:40px">
+        <div class="container contact">
+            <div class="rv">
+                <h3>Email</h3>
+                <p><a class="mail" href="mailto:tomas@makyneta.dev">tomas@makyneta.dev</a></p><br>
+                <p style="color:var(--mute)">Preenche o formulário ou envia-nos email diretamente.</p>
+            </div>
+            <form id="contact-form" class="rv" action="https://formsubmit.co/tomas@makyneta.dev" method="POST">
+                <input class="hp" name="website" tabindex="-1" autocomplete="off"><input type="hidden" name="_subject"
+                    value="Nova mensagem — The Holy Sign"><input type="hidden" name="_captcha" value="false">
+
+                <input name="name" placeholder="Nome" required><input type="email" name="email" placeholder="Email"
+                    required>
+
+                <select name="assunto">
+                    <option>Concertos / Booking</option>
+                    <option>Imprensa</option>
+                    <option>Parcerias</option>
+                    <option>Outro</option>
+                </select>
+
+                <textarea name="message" placeholder="Mensagem" required></textarea>
+
+                <label class="check"><input type="checkbox" required> Aceito a
+                    <a href="/politica-de-privacidade.html">Política de Privacidade</a></label>
+                <button class="btn" type="submit">Enviar mensagem</button>
+
+                <div class="msg" id="form-msg"></div>
+
+            </form>
+        </div>
+    </section>
+    <div id="site-footer"></div>
+</body>
+
+</html>

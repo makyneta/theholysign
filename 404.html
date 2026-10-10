@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Metadados -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="The Holy Sign — pop/rock alternativo. Site oficial.">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Scripts -->
+    <script src="/assets/scripts/config.js" defer></script>
+    <script src="/assets/scripts/main.js" defer></script>
+    <script>
+     (function () {
+        var REDIRECTS = {
+         // Socials
+          'instagram': { url: 'https://instagram.com/theholysign' },
+          'facebook': { url: 'https://facebook.com/theholysign' },
+          'tiktok': { url: 'https://tiktok.com/@theholysign' },
+          'youtube': { url: 'https://youtube.com/@theholysignband' },
+          'spotify': { url: 'https://open.spotify.com/artist/ID' },
+          'applemusic': { url: 'https://music.apple.com/artist/ID' },
+          'deezer': { url: 'https://deezer.com/artist/ID' },
+
+           // Contacto
+           'mail': { url: 'mailto:tomas@makyneta.dev' }
+       };
+
+       var slug = window.location.pathname.split('/').filter(Boolean).pop();
+        if (slug) {
+         slug = slug.toLowerCase().replace(/\.html$/, '');
+          var dest = REDIRECTS[slug];
+         if (dest) {
+           if (dest.url.indexOf('mailto:') !== 0) document.documentElement.style.visibility = 'hidden';
+            window.location.replace(dest.url);
+         }
+       }
+     })();
+    </script>
+
+    <!-- Favicon, OGImage, Title -->
+    <meta property="og:image" content="/assets/images/ogimg.webp">
+    <link rel="icon" href="/favicon.png">
+    <title>404 | The Holy Sign</title>
+</head>
+
+<body>
+  <div id="site-header"></div>
+  <main class="nf">
+    <div>
+      <h1>404</h1><br>
+      <h2>Esta faixa não existe</h2>
+      <p>A página que procuras foi movida ou nunca existiu.</p><a class="btn" href="/">Voltar ao início</a>
+      <!-- <a class="btn ghost" href="/lancamentos">Ouvir música</a> -->
+    </div>
+  </main>
+  <div id="site-footer"></div>
+</body>
+
+</html>

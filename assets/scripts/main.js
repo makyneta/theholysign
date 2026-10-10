@@ -39,7 +39,7 @@
       const r = await fetch("https://formspree.io/f/moejwlde" + T.email, { method: "POST", headers: { "Accept": "application/json" }, body: new FormData(f) });
       if (!r.ok) throw 0; m.textContent = "Mensagem enviada! Responderemos em breve."; f.reset()
     }
-    catch { m.innerHTML = "Erro ao enviar. Escreve-nos diretamente para <a href='mailto:" + T.email + "'>" + T.email + "</a>." }
+    catch { m.innerHTML = "Erro ao enviar. Escreva-nos diretamente para <a href='mailto:" + T.email + "'>" + T.email + "</a>." }
     m.style.display = "block"; btn.disabled = false
   });
 })();

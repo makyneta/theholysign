@@ -36,7 +36,7 @@
     e.preventDefault(); if (f.website.value) return;
     const m = document.getElementById("form-msg"), btn = f.querySelector("button"); btn.disabled = true;
     try {
-      const r = await fetch("https://formsubmit.co/ajax/" + T.email, { method: "POST", headers: { "Accept": "application/json" }, body: new FormData(f) });
+      const r = await fetch("https://formspree.io/f/moejwlde" + T.email, { method: "POST", headers: { "Accept": "application/json" }, body: new FormData(f) });
       if (!r.ok) throw 0; m.textContent = "Mensagem enviada! Responderemos em breve."; f.reset()
     }
     catch { m.innerHTML = "Erro ao enviar. Escreve-nos diretamente para <a href='mailto:" + T.email + "'>" + T.email + "</a>." }

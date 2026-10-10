@@ -8,8 +8,9 @@
   await Promise.all([inject("site-header", "/assets/partials/header.html"), inject("site-footer", "/assets/partials/footer.html")]);
 
   // link ativo no header
-  const path = location.pathname.replace(/\/index\.html$/, "/");
-  document.querySelectorAll("#nav a").forEach(a => { const u = new URL(a.href); if (!u.hash && u.pathname === path) a.classList.add("active") });
+  const normalizePath = p => p.replace(/\/index\.html$/, "/").replace(/\.html$/, "").replace(/\/$/, "") || "/";
+  const path = normalizePath(location.pathname);
+  document.querySelectorAll("#nav a").forEach(a => { const u = new URL(a.href); if (!u.hash && normalizePath(u.pathname) === path) a.classList.add("active") });
   // ano no footer
   document.querySelectorAll("[data-year]").forEach(s => s.textContent = new Date().getFullYear());
   // menu hambúrguer
@@ -36,7 +37,7 @@
     e.preventDefault(); if (f.website.value) return;
     const m = document.getElementById("form-msg"), btn = f.querySelector("button"); btn.disabled = true;
     try {
-      const r = await fetch("https://formspree.io/f/moejwlde" + T.email, { method: "POST", headers: { "Accept": "application/json" }, body: new FormData(f) });
+      const r = await fetch(f.action, { method: f.method, headers: { "Accept": "application/json" }, body: new FormData(f) });
       if (!r.ok) throw 0; m.textContent = "Mensagem enviada! Responderemos em breve."; f.reset()
     }
     catch { m.innerHTML = "Erro ao enviar. Escreva-nos diretamente para <a href='mailto:" + T.email + "'>" + T.email + "</a>." }

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Metadados -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="The Holy Sign — pop/rock alternativo. Site oficial.">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Scripts -->
+    <script src="main.js" defer></script>
+
+    <!-- Favicon, OGImage, Title -->
+    <meta property="og:image" content="/assets/images/ogimg.webp">
+    <link rel="icon" href="/favicon.png">
+    <title>The Holy Sign</title>
+</head>
+
+<body>
+    <div id="site-header"></div>
+
+    <section class="hero">
+        <div class="slide active" style="--d:url(https://www.thescriptmusic.com/wp-content/uploads/2026/08/2026-bg-desktop.jpg);--m:url(https://www.thescriptmusic.com/wp-content/uploads/2026/08/2026-bg.jpg)"></div>
+
+        <div class="hero-c">
+            <p class="hero-kicker">O novo single</p>
+            <h1 class="hero-title">Título do Single</h1>
+            <a class="btn btn-outline" href="#">Ouvir agora</a>
+        </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section id="sobre" class="sec-light">
+        <div class="container">
+            <h2 class="sec-heading">Sobre</h2>
+            <p class="sec-sub">Pop/rock alternativo</p>
+            <div class="about-grid">
+                <div class="about-photo" style="background-image:url(/assets/images/band/about.webp)" role="img" aria-label="The Holy Sign"></div>
+                <div class="about-text">
+                    <p>Fundada em 07.10.2026 na Universidade de Leiria e Oeste, a banda The Holy Sign é uma banda de pop/rock alternativo que mistura melodias marcantes com guitarra e saxofone intenso e uma atmosfera sombria e cinematográfica.</p>
+                    <div class="about-actions">
+                        <a class="btn btn-dark" href="#contactos">Contactar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOTO DE FUNDO (parallax) -->
+    <section class="parallax" style="--img:url(/assets/images/background/band-v3.jpg)" role="img" aria-label="The Holy Sign"></section>
+
+    <!-- TOUR (as datas estão em SHOWS, no topo do main.js) -->
+    <section id="tour" class="sec-light">
+        <div class="container">
+            <h2 class="sec-heading">Tour</h2>
+            <p class="sec-sub" id="tour-sub" hidden>Bilhetes já à venda</p>
+
+            <div class="tour-list" id="tour-list" hidden></div>
+
+            <!-- Aparece quando não há concertos -->
+            <div class="tour-empty" id="tour-empty" hidden>
+                <div class="tour-empty-date" aria-hidden="true">—</div>
+                <h3>Sem concertos agendados</h3>
+                <p>Estamos a preparar novas datas. Segue as nossas redes sociais para seres dos primeiros a saber.</p>
+                <a class="btn btn-dark" href="#contactos">Contactar</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTOS -->
+    <section id="contactos" class="contact-sec" style="--bg-img:url(/assets/images/band/contact.webp)">
+        <div class="container contact-wrap">
+            <h2 class="sec-heading">Contactos</h2>
+            <p class="sec-sub">Concertos, imprensa e colaborações.</p>
+
+            <form id="contact-form" class="contact-form" action="https://formspree.io/f/moejwlde" method="POST">
+                <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+                <label>Nome
+                    <input type="text" name="name" autocomplete="name" required>
+                </label>
+                <label>Email
+                    <input type="email" name="email" autocomplete="email" required>
+                </label>
+                <label>Mensagem
+                    <textarea name="message" required></textarea>
+                </label>
+                <!-- <label class="check">
+                    <input type="checkbox" name="consent" required>
+                    <span>Li e aceito a <a href="/privacidade">Política de Privacidade</a>.</span>
+                </label> -->
+                <button class="btn btn-navy" type="submit">Enviar mensagem</button>
+                <div class="msg" id="form-msg" role="status"></div>
+            </form>
+            <p class="contact-mail">Ou escreve para <a data-email href="#"></a></p>
+        </div>
+    </section>
+
+    <div id="site-footer"></div>
+</body>
+
+</html>

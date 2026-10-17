@@ -962,3 +962,53 @@ body.menu-open .burger span{background:#000}
 body.menu-open .header .logo img,body.menu-open .header .logo svg,body.menu-open .header img[src*="logo"]{filter:brightness(0)}
 body.menu-open .logo span{color:var(--navy)}
 .logo img,.logo svg,.logo span{transition:filter .3s,color .3s}
+ 
+ 
+/* =========================================================
+   SECÇÃO BANDA — foto com os 4 membros (nome + instrumento)
+   ========================================================= */
+/*.lineup-sec{background:var(--navy);color:#fff;padding:96px 0 104px}
+.lineup-sec .sec-heading{font-family:'Inter',sans-serif;font-weight:400;font-size:clamp(1.5rem,2.6vw,2rem);letter-spacing:.35em;text-transform:uppercase;text-align:center;color:#fff;margin:0 0 14px;padding-left:.35em}
+.lineup-sub{text-align:center;font-size:.95rem;color:rgba(255,255,255,.72)}
+.lineup{max-width:1035px;margin:56px auto 0}
+.lineup-photo{aspect-ratio:16/9;background:var(--img,none) center/cover no-repeat,linear-gradient(135deg,#17406e,#0b2a4d);background-color:#0b2a4d} */
+ 
+/* nomes por baixo da foto, alinhados a cada membro (--x = posição horizontal em %) */
+/*.lineup-names{position:relative;list-style:none;height:84px}
+.lineup-name{position:absolute;top:0;left:var(--x);transform:translateX(-50%);width:max-content;max-width:24%;padding-top:30px;text-align:center}
+.lineup-name::before{content:"";position:absolute;top:0;left:50%;width:1px;height:20px;background:rgba(255,255,255,.55)}
+.lineup-name b{display:block;font-family:'Inter',sans-serif;font-weight:500;font-size:.95rem;letter-spacing:.14em;text-transform:uppercase;line-height:1.25}
+.lineup-name span{display:block;margin-top:6px;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:#8fc0e8}
+ 
+@media(max-width:760px){
+  .lineup-sec{padding:64px 0 72px}
+  .lineup{margin-top:40px}
+  .lineup-photo{aspect-ratio:4/3}
+  .lineup-names{display:grid;grid-template-columns:1fr 1fr;gap:26px 16px;height:auto;margin-top:28px}
+  .lineup-name{position:static;transform:none;width:auto;max-width:none;padding-top:0}
+  .lineup-name::before{display:none}
+}*/
+ 
+ 
+/* =========================================================
+   SECÇÃO BANDA — foto com os 4 membros (nome + instrumento)
+   ========================================================= */
+.lineup-sec{background:var(--navy);color:#fff;padding:96px 0 104px}
+.lineup-sec .sec-heading{font-family:'Inter',sans-serif;font-weight:400;font-size:clamp(1.5rem,2.6vw,2rem);letter-spacing:.35em;text-transform:uppercase;text-align:center;color:#fff;margin:0 0 14px;padding-left:.35em}
+.lineup-sub{text-align:center;font-size:.95rem;color:rgba(255,255,255,.72)}
+.lineup{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:28px;max-width:1035px;margin:56px auto 0}
+.lineup-card{text-align:center}
+.lineup-img{position:relative;aspect-ratio:3/4;overflow:hidden;background:linear-gradient(135deg,#17406e,#0b2a4d)}
+.lineup-img::before{content:"";position:absolute;inset:0;background:var(--img,none) center/cover no-repeat;transition:transform .6s ease}
+.lineup-card:hover .lineup-img::before{transform:scale(1.05)}
+.lineup-info{padding-top:16px;border-top:2px solid var(--sky)}
+.lineup-info b{display:block;font-family:'Inter',sans-serif;font-weight:500;font-size:.95rem;letter-spacing:.14em;text-transform:uppercase;line-height:1.25}
+.lineup-info span{display:block;margin-top:6px;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:#8fc0e8}
+ 
+@media(max-width:980px){.lineup{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:760px){
+  .lineup-sec{padding:64px 0 72px}
+  .lineup{margin-top:40px;gap:28px 16px}
+  .lineup-info b{font-size:.85rem;letter-spacing:.1em}
+}
+@media(prefers-reduced-motion:reduce){.lineup-img::before{transition:none}}

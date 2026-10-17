@@ -1,0 +1,56 @@
+/* =========================================================
+   PÁGINA VÍDEOS — /assets/styles/videos.css
+   (carregar depois do style.css: usa as variáveis --h e --navy)
+   ========================================================= */
+
+/* Fundo em imagem */
+.videos-bg{position:fixed;inset:0;z-index:-1;background:var(--bg-img,none) center/cover no-repeat,linear-gradient(180deg,#5d92c4,#2f5d8c);background-color:#3f74a6}
+.videos-bg::after{content:"";position:absolute;inset:0;background:rgba(5,20,40,.18)}
+
+.videos-main{flex:1;padding:calc(var(--h) + 64px) 0 110px}
+.videos-wrap{width:min(1030px,92%);margin-inline:auto}
+
+.videos-title{font-family:'Inter',sans-serif;font-weight:400;font-size:clamp(1.5rem,2.6vw,2rem);letter-spacing:.42em;padding-left:.42em;text-transform:uppercase;text-align:center;color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.25)}
+
+/* Grelha de miniaturas */
+.videos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:44px 29px;margin-top:64px}
+
+.video-card{display:block;width:100%;padding:0;border:0;background:none;color:#fff;font:inherit;text-align:center;cursor:pointer}
+.video-thumb{position:relative;display:block;aspect-ratio:16/9;overflow:hidden;background:#0b1a2b}
+.video-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.video-card:hover .video-thumb img,.video-card:focus-visible .video-thumb img{transform:scale(1.05)}
+
+/* botão de play (aparece ao passar o rato / foco) */
+.video-play{position:absolute;inset:0;display:grid;place-items:center;background:rgba(5,20,40,.28);opacity:0;transition:opacity .3s}
+.video-play::before{content:"";width:58px;height:58px;border-radius:50%;background:#fff}
+.video-play::after{content:"";position:absolute;width:0;height:0;border-style:solid;border-width:10px 0 10px 17px;border-color:transparent transparent transparent var(--navy);margin-left:4px}
+.video-card:hover .video-play,.video-card:focus-visible .video-play{opacity:1}
+.video-card:focus-visible{outline:2px solid #fff;outline-offset:6px}
+
+.video-title{display:block;min-height:2.4em;margin-top:9px;font-family:'Inter',sans-serif;font-weight:500;font-size:.95rem;line-height:1.2;letter-spacing:.02em;text-transform:uppercase;text-shadow:0 1px 10px rgba(0,0,0,.3)}
+
+.videos-empty{margin-top:64px;text-align:center;color:#fff}
+
+/* Popup */
+/* o style.css faz margin:0 em tudo, o que tirava o popup do centro: margin:auto + inset:0 volta a centrá-lo */
+.vd{position:fixed;inset:0;margin:auto;height:fit-content;border:0;padding:0;background:transparent;width:min(1100px,94vw,calc((100vh - 130px) * 16 / 9));max-width:none;max-height:none;overflow:visible}
+.vd::backdrop{background:rgba(3,12,26,.9)}
+.vd[open]{animation:vd-in .3s ease}
+@keyframes vd-in{from{opacity:0;transform:scale(.97)}}
+.vd-frame{aspect-ratio:16/9;background:#000;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.vd-frame iframe{display:block;width:100%;height:100%;border:0}
+
+.vd-close{position:absolute;top:-52px;right:0;width:40px;height:40px;border:0;border-radius:50%;background:#fff;cursor:pointer;transition:transform .2s}
+.vd-close:hover{transform:scale(1.08)}
+.vd-close::before,.vd-close::after{content:"";position:absolute;left:11px;right:11px;top:19px;height:2px;background:#000}
+.vd-close::before{transform:rotate(45deg)}
+.vd-close::after{transform:rotate(-45deg)}
+.vd-close:focus-visible{outline:2px solid #fff;outline-offset:3px}
+
+@media(max-width:980px){.videos-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){
+  .videos-main{padding-top:calc(var(--h) + 44px)}
+  .videos-grid{grid-template-columns:1fr;gap:32px;margin-top:44px}
+  .video-title{min-height:0}
+}
+@media(prefers-reduced-motion:reduce){.video-thumb img,.video-play,.vd[open]{transition:none;animation:none}}

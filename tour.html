@@ -8,15 +8,15 @@
     <!-- Metadados -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="description" content="The Holy Sign — pop/rock alternativo. Site oficial.">
+    <meta name="description" content="The Holy Sign — datas de concertos e bilhetes.">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="/assets/styles/style.css">
+    <link rel="stylesheet" href="/assets/styles/tour.css">
+    <link rel="stylesheet" href="/assets/styles/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
 
     <!-- Scripts -->
-    <script src="/assets/scripts/config.js" defer></script>
     <script src="/assets/scripts/main.js" defer></script>
 
     <!-- Favicon, OGImage, Title -->
@@ -25,44 +25,30 @@
     <title>Tour | The Holy Sign</title>
 </head>
 
-<body>
+<body class="tour-page">
     <div id="site-header"></div>
-    <div class="page-head">
+
+    <!-- Imagem de fundo da página: coloca a tua em /assets/images/band/tour-bg.webp -->
+    <div class="tour-bg" style="--bg-img:url(/assets/images/background/tour.webp)" aria-hidden="true"></div>
+
+    <main class="tour-main">
         <div class="container">
-            <h1 class="sec-title">Tour</h1>
-            <p class="sub">Datas e bilhetes.</p>
+            <h1 class="tour-title">Tour</h1>
+            <p class="tour-sub" id="tour-sub" hidden>Bilhetes já à venda</p>
+
+            <!-- As datas estão em SHOWS, no topo do main.js (as mesmas da página inicial) -->
+            <div class="tour-list" id="tour-list" hidden></div>
+
+            <!-- Aparece quando não há concertos -->
+            <div class="tour-empty" id="tour-empty" hidden>
+                <div class="tour-empty-date" aria-hidden="true">—</div>
+                <h3>Sem concertos agendados</h3>
+                <p>Estamos a preparar novas datas. Segue as nossas redes sociais para seres dos primeiros a saber.</p>
+                <a class="btn btn-outline" href="/#contactos">Contactar</a>
+            </div>
         </div>
-    </div>
+    </main>
 
-    <section style="padding-top:40px">
-        <div class="container">
-
-            <div class="show rv ">
-                <div class="date"><b>15</b><span>OUT</span></div>
-                <div>
-                    <h3>Coliseu</h3>
-                    <p>Lisboa, PT</p>
-                </div><a class="btn" href="#">Bilhetes</a>
-            </div>
-            
-            <div class="show rv ">
-                <div class="date"><b>22</b><span>NOV</span></div>
-                <div>
-                    <h3>Hard Club</h3>
-                    <p>Porto, PT</p>
-                </div><a class="btn" href="#">Bilhetes</a>
-            </div>
-
-            <div class="show rv soldout">
-                <div class="date"><b>06</b><span>DEZ</span></div>
-                <div>
-                    <h3>Casa da Música</h3>
-                    <p>Marinha Grande, PT</p>
-                </div><a class="btn" href="#">Esgotado</a>
-            </div>
-
-        </div>
-    </section>
     <div id="site-footer"></div>
 </body>
 

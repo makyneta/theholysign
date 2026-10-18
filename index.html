@@ -8,154 +8,106 @@
     <!-- Metadados -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="description" content="The Holy Sign — pop/rock alternativo. Site oficial.">
+    <meta name="description" content="The Holy Sign — pop/rock alternativo. O primeiro lançamento está a chegar.">
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="/assets/styles/style.css">
+    <!-- Styles (esta página é independente: não precisa do style.css) -->
+    <link rel="stylesheet" href="/assets/styles/soon.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
-    <style> @media (max-width: 00px) {.hero-logo img {width: 50%; height: auto;} }</style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
 
     <!-- Scripts -->
-    <script src="/assets/scripts/config.js" defer></script>
+    <script src="/assets/scripts/soon.js" defer></script>
     <script src="/assets/scripts/main.js" defer></script>
 
     <!-- Favicon, OGImage, Title -->
+    <meta property="og:title" content="The Holy Sign — Em breve">
     <meta property="og:image" content="/assets/images/ogimg.webp">
     <link rel="icon" href="/favicon.png">
     <title>The Holy Sign</title>
 </head>
 
-<body>
-    <div id="site-header"></div>
+<body class="soon-page">
 
-    <section class="hero">
-        <div class="slide active" style="--d:url(/assets/images/band/herosection/computer-v1.webp);--m:url(/assets/images/band/herosection/mobile-v2.webp)"></div>
+    <!-- ============ EM BREVE ============ -->
+    <section class="soon-hero" id="inicio">
+        <!-- Imagens do fundo: computador (--d) e telemóvel (--m) -->
+        <div class="soon-hero-bg" style="--d:url(/assets/images/band/herosection/computer-v1.webp);--m:url(/assets/images/band/herosection/mobile-v2.webp)" aria-hidden="true"></div>
 
-        <div class="hero-c">
-            <h1 class="hero-logo"><img src="/assets/images/logo.png" alt="The Holy Sign" onerror="this.replaceWith('The Holy Sign')"></h1>
-            <!-- <p>Pop · Rock · Alternativo</p> --> <br>
-            <a class="btn" href="#">Ouvir agora</a>
+        <div class="soon-hero-c">
+            <h1 class="soon-logo"><img src="/assets/images/logo.png" alt="The Holy Sign" onerror="this.replaceWith('The Holy Sign')"></h1>
+            <p class="soon-kicker">Em breve</p>
+            <p class="soon-text">O nosso primeiro lançamento está a chegar.</p>
+
+            <!-- Contagem decrescente (opcional): escreve a data de estreia em data-launch (AAAA-MM-DDTHH:MM:SS).
+                 Deixa data-launch="" e a contagem não aparece. -->
+            <div class="soon-count" id="soon-count" data-launch="" hidden>
+                <div><b data-unit="d">00</b><span>Dias</span></div>
+                <div><b data-unit="h">00</b><span>Horas</span></div>
+                <div><b data-unit="m">00</b><span>Min</span></div>
+                <div><b data-unit="s">00</b><span>Seg</span></div>
+            </div>
+
+            <a class="btn-outline" href="#contactos">Contactar</a>
         </div>
 
-        <a class="scroll" href="#sobre" aria-label="Descer"><i class="fa-solid fa-chevron-down"></i></a>
+        <a class="soon-scroll" href="#banda" aria-label="Descer"><i class="fa-solid fa-chevron-down"></i></a>
     </section>
 
-    <!-- LANÇAMENTOS -->
-    <!-- <section>
-        <div class="container">
-            <h2 class="sec-title">Lançamentos</h2>
-            <p class="sub">Nova música, disponível em todas as plataformas.</p>
-            <div class="grid">
-                <article class="card rv">
-                    <div class="cover"><img src="/assets/img/release-1.jpg" alt="Título do Single"
-                            onerror="this.remove()">THS</div>
-                    <div class="card-b">
-                        <h3>Título do Single</h3><small>Single · 2026</small>
-                        <div class="links">
-                            <a href="#" aria-label="Spotify"><i class="fa-brands fa-spotify"></i></a>
-                            <a href="#" aria-label="Apple Music"><i class="fa-brands fa-apple"></i></a>
-                            <a href="#" aria-label="Deezer"><i class="fa-brands fa-deezer"></i></a>
-                            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a></div>
-                    </div>
-                </article>
-
-                <article class="card rv">
-                    <div class="cover"><img src="/assets/img/release-2.jpg" alt="Nome do EP" onerror="this.remove()">THS
-                    </div>
-                    <div class="card-b">
-                        <h3>Nome do EP</h3><small>EP · 2026</small>
-                        <div class="links">
-                            <a href="#" aria-label="Spotify"><i class="fa-brands fa-spotify"></i></a>
-                            <a href="#" aria-label="Apple Music"><i class="fa-brands fa-apple"></i></a>
-                            <a href="#" aria-label="Deezer"><i class="fa-brands fa-deezer"></i></a>
-                            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a></div>
-                    </div>
-                </article>
-
-                <article class="card rv">
-                    <div class="cover"><img src="/assets/img/release-3.jpg" alt="Outro Single"
-                            onerror="this.remove()">THS</div>
-                    <div class="card-b">
-                        <h3>Outro Single</h3><small>Single · 2025</small>
-                        <div class="links">
-                            <a href="#" aria-label="Spotify"><i class="fa-brands fa-spotify"></i></a>
-                            <a href="#" aria-label="Apple Music"><i class="fa-brands fa-apple"></i></a>
-                            <a href="#" aria-label="Deezer"><i class="fa-brands fa-deezer"></i></a>
-                            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a></div>
-                    </div>
-                </article>
-            </div>
-            <div class="more"><a class="btn ghost" href="/lancamentos.html">Ver discografia</a></div>
-        </div>
-    </section> -->
-
-    <!-- SOBRE -->
-    <section id="sobre" class="alt">
-        <div class="container about">
-            <div class="about-img rv" style="background-image:url(/assets/images/band/about.webp)"></div>
-            <div class="rv">
-                <h2 class="sec-title">Sobre</h2>
-                <p>Fundada em 07.10.2026 na Universidade de Leiria e Oeste, a banda The Holy Sign é uma banda de pop/rock alternativo que mistura melodias marcantes com guitarra e saxofone intenso e uma atmosfera sombria e cinematográfica.</p><br>
-                <a class="btn ghost" href="/sobre">Saber Mais</a>
-                <a class="btn ghost" href="/contactos">Contactar</a>
-            </div>
+    <!-- ============ BANDA ============ -->
+    <section id="banda" class="lineup-sec">
+        <div class="wrap">
+            <h2 class="sec-heading">A Banda</h2>
+            <!-- <p class="lineup-sub">Os quatro membros</p> -->
+            <ul class="lineup">
+                <li class="lineup-card rv">
+                    <div class="lineup-img" style="--img:url(/assets/images/band/tomas-mota.webp)" role="img" aria-label="Nome do Membro 1"></div>
+                    <div class="lineup-info"><b>Tomás Mota</b><span>Voz, Guitarra, Violão</span></div>
+                </li>
+                <li class="lineup-card rv">
+                    <div class="lineup-img" style="--img:url(/assets/images/band/esdras-lopes.webp)" role="img" aria-label="Nome do Membro 2"></div>
+                    <div class="lineup-info"><b>Esdras Lopes</b><span>Voz, Saxofone, Piano</span></div>
+                </li>
+                <li class="lineup-card rv">
+                    <div class="lineup-img" style="--img:url(/assets/images/band/miguel-amaral.webp)" role="img" aria-label="Nome do Membro 3"></div>
+                    <div class="lineup-info"><b>Miguel Amaral</b><span>Baixo</span></div>
+                </li>
+                <li class="lineup-card rv">
+                    <div class="lineup-img" style="--img:url(/assets/images/band/daniel-santos.webp)" role="img" aria-label="Nome do Membro 4"></div>
+                    <div class="lineup-info"><b>Daniel Santos</b><span>Batreria</span></div>
+                </li>
+            </ul>
         </div>
     </section>
 
-    <!-- VÍDEOS -->
-    <!-- <section>
-        <div class="container">
-            <h2 class="sec-title">Vídeos</h2>
-            <p class="sub">Os últimos vídeos da banda.</p>
-            <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(320px,1fr))">
+    <!-- ============ CONTACTO ============ -->
+    <section id="contactos" class="contact-sec" style="--photo:url(/assets/images/background/main.webp)">
+        <div class="wrap contact-wrap">
+            <h2 class="sec-heading">Contacto</h2>
+            <!-- <p class="contact-sub">Concertos, imprensa e colaborações</p> -->
 
-                <div class="card rv">
-                    <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID_1" title="Vídeo 1"
-                            loading="lazy" allowfullscreen></iframe></div>
-                    <div class="card-b">
-                        <h3>Título do Vídeo 1</h3>
-                    </div>
-                </div>
-
-                <div class="card rv">
-                    <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID_2" title="Vídeo 2"
-                            loading="lazy" allowfullscreen></iframe></div>
-                    <div class="card-b">
-                        <h3>Título do Vídeo 2</h3>
-                    </div>
-                </div>
-
-                <div class="card rv">
-                    <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID_3" title="Vídeo 3"
-                            loading="lazy" allowfullscreen></iframe></div>
-                    <div class="card-b">
-                        <h3>Título do Vídeo 3</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="more"><a class="btn ghost" href="/videos.html">Ver todos</a></div>
-        </div>
-    </section> -->
-
-    <!-- TOUR -->
-    <!-- <section class="alt">
-        <div class="container">
-            <h2 class="sec-title">Tour</h2>
-            <p class="sub">Próximas datas ao vivo.</p>
-
-            <div class="show rv soldout">
-                <div class="date"><b>06</b><span>DEZ</span></div>
-                <div> <h3>Casa da Música</h3>
-                <p>Marinha Grande, PT</p>
-                </div><a class="btn" href="#">Esgotado</a>
+            <!-- Email e telefone -->
+            <div class="contact-info">
+                <a href="mailto:tomas@makyneta.dev"><i class="fa-solid fa-envelope"></i><span>tomas@makyneta.dev</span></a>
+                <a href="tel:+351913936776"><i class="fa-solid fa-phone"></i><span>+351 91 393 67 76</span></a>
             </div>
 
-            <div class="more"><a class="btn ghost" href="/tour.html">Ver todas as datas</a></div>
+            <!-- action: o endereço do teu serviço de formulários (ex.: Formspree) -->
+            <form id="contact-form" action="https://formspree.io/f/moejwlde" method="POST">
+                <div class="form-row">
+                    <input type="text" name="name" placeholder="Nome" autocomplete="name" required>
+                    <input type="email" name="email" placeholder="Email" autocomplete="email" required>
+                </div>
+                <textarea name="message" placeholder="Mensagem" required></textarea>
+                <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+                <!-- <label class="check"><input type="checkbox" name="privacy" required><span>Li e aceito a <a href="/privacidade">Política de Privacidade</a>.</span></label> -->
+                <button class="btn-outline" type="submit">Enviar</button>
+                <p class="form-msg" id="form-msg" role="status"></p>
+            </form>
         </div>
-    </section> -->
+    </section>
 
     <div id="site-footer"></div>
+
 </body>
 
 </html>

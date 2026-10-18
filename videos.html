@@ -4,47 +4,52 @@
     <!-- Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://i.ytimg.com">
 
     <!-- Metadados -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="description" content="The Holy Sign — pop/rock alternativo. Site oficial.">
+    <meta name="description" content="The Holy Sign — vídeos oficiais.">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="/assets/styles/style.css">
+    <link rel="stylesheet" href="/assets/styles/videos.css">
+    <link rel="stylesheet" href="/assets/styles/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
 
     <!-- Scripts -->
-    <script src="/assets/scripts/config.js" defer></script>
     <script src="/assets/scripts/main.js" defer></script>
+    <script src="/assets/scripts/videos.js" defer></script>
 
     <!-- Favicon, OGImage, Title -->
     <meta property="og:image" content="/assets/images/ogimg.webp">
     <link rel="icon" href="/favicon.png">
-    <title>Vídoes | The Holy Sign</title>
+    <title>Vídeos | The Holy Sign</title>
 </head>
 
-<body>
+<body class="videos-page">
     <div id="site-header"></div>
-    <div class="page-head">
-        <div class="container">
-            <h1 class="sec-title">Vídeos</h1>
-            <p class="sub">Videoclipes, ao vivo e bastidores.</p>
-        </div>
-    </div>
-    <section style="padding-top:40px">
-        <div class="container">
-            <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(320px,1fr))">
 
-                <div class="card rv">
-                    <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID_1" title="Vídeo 1" loading="lazy" allowfullscreen></iframe></div>
-                    <div class="card-b"> <h3>Título do Vídeo 1</h3> </div>
-                </div>
+    <!-- Imagem de fundo da página (muda o caminho se quiseres outra) -->
+    <div class="videos-bg" style="--bg-img:url(/assets/images/band/tour-bg.webp)" aria-hidden="true"></div>
 
-            </div>
+    <main class="videos-main">
+        <div class="videos-wrap">
+            <h1 class="videos-title">Vídeos</h1>
+
+            <!-- Preenchido automaticamente pelo videos.js (lista VIDEOS no topo desse ficheiro) -->
+            <div class="videos-grid" id="videos-grid"></div>
+
+            <p class="videos-empty" id="videos-empty" hidden>Ainda não há vídeos publicados.</p>
         </div>
-    </section>
+    </main>
+
+    <!-- Popup do YouTube -->
+    <dialog class="vd" id="video-dialog" aria-label="Vídeo">
+        <button class="vd-close" id="video-close" type="button" aria-label="Fechar vídeo"></button>
+        <div class="vd-frame" id="video-frame"></div>
+    </dialog>
+
     <div id="site-footer"></div>
 </body>
 

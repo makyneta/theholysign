@@ -1,23 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-PT">
 <head>
-    <!-- Preconnect -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <!-- Metadados -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="description" content="The Holy Sign — pop/rock alternativo. Site oficial.">
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="/assets/styles/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
-
-    <!-- Scripts -->
-    <script src="/assets/scripts/config.js" defer></script>
-    <script src="/assets/scripts/main.js" defer></script>
+    <!-- Redirecionamentos (atalhos de redes sociais e lançamentos). Tem de ficar no topo do head. -->
     <script>
      (function () {
         var REDIRECTS = {
@@ -30,8 +17,8 @@
           'applemusic': { url: 'https://music.apple.com/artist/ID' },
           'deezer': { url: 'https://deezer.com/artist/ID' },
 
-           // Contacto
-           'mail': { url: 'mailto:tomas@makyneta.dev' }
+           // Releases
+           'smooth-operator': { url: '/release/smooth-operator' }
        };
 
        var slug = window.location.pathname.split('/').filter(Boolean).pop();
@@ -46,23 +33,46 @@
      })();
     </script>
 
-    <!-- Favicon, OGImage, Title -->
-    <meta property="og:image" content="/assets/images/ogimg.webp">
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Metadados -->
+    <meta name="robots" content="noindex">
+    <meta name="description" content="Página não encontrada — The Holy Sign.">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/styles/main.css">
+    <link rel="stylesheet" href="/assets/styles/404.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Scripts (cabeçalho e rodapé) -->
+    <script src="/assets/scripts/main.js" defer></script>
+
+    <!-- Favicon, Title -->
     <link rel="icon" href="/favicon.png">
-    <title>404 | The Holy Sign</title>
+    <title>404 ! The Holy Sign</title>
 </head>
 
-<body>
-  <div id="site-header"></div>
-  <main class="nf">
-    <div>
-      <h1>404</h1><br>
-      <h2>Esta faixa não existe</h2>
-      <p>A página que procuras foi movida ou nunca existiu.</p><a class="btn" href="/">Voltar ao início</a>
-      <!-- <a class="btn ghost" href="/lancamentos">Ouvir música</a> -->
-    </div>
-  </main>
-  <div id="site-footer"></div>
+<body class="nf-page">
+    <!-- <div id="site-header"></div> -->
+
+    <!-- Imagem de fundo da página (muda o caminho se quiseres outra) -->
+    <div class="nf-bg" style="--bg-img:url(/assets/images/band/tour-bg.webp)" aria-hidden="true"></div>
+
+    <main class="nf-main">
+        <div class="nf-box">
+            <p class="nf-code" aria-hidden="true">404</p>
+            <h1 class="nf-title">Página não encontrada</h1>
+            <p class="nf-text">A página que procuras não existe ou mudou de sítio.</p>
+            <div class="nf-actions">
+                <a class="btn btn-outline" href="/">Voltar ao início</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="site-footer"></div>
 </body>
 
 </html>
